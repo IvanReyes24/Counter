@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CounterJs</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			font-family: "Roboto", sans-serif;
+			position: relative;
+		}
+
+		.container{
+			background-color: pink;
+			width: 500px;
+			display: flex;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+			height: 250px;
+			font-size: 50px;
+			box-shadow: 10px 20px palevioletred;
+			
+		}
+
+		.container .div_counter h1{
+			font-weight: 700;
+		}
+
+		.div_counter button{
+			width: 70px;
+			height: 35px;
+			margin: 10px 10px;
+			border-radius: 20px;
+			border: none;
+			background-color: lightskyblue;
+		}
+
+		i{
+			font-size: 20px;
+		}
+
+		.kitty{
+			position: absolute;
+			bottom: 61%;
+		}
+
+		.kitty img{
+			height: 200px;
+		}
+
+		@media(max-width:600px){
+			.container{
+				margin: 10px;
+				width: 100%;
+				font-size: 30px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="kitty">
+		<img src="./kitty-cat.png" alt="Hello Kitty">
+	</div>
+	<div class="container">
+		<div class="div_counter">
+			<h1 id="count">0</h1>
+			<button id="decrement"><i class="fa-solid fa-minus"></i></button>
+			<button id="increment"><i class="fa-solid fa-plus"></i></button>
+		</div>
+		
+	</div>
+
+	<script>
+		let counter = 0;
+		let count = document.getElementById("count");
+		let decrement = document.getElementById("decrement");
+		let increment = document.getElementById("increment");
+	
+		decrement.addEventListener('click', function(){
+			counter--;
+			count.innerHTML = counter;
+			// console.log(counter--);
+		});
+
+		increment.addEventListener('click', function(){
+			counter++;
+			count.innerHTML = counter;
+			// console.log(counter++);
+		});
+	</script>
+	<script src="https://kit.fontawesome.com/46902bd23b.js" crossorigin="anonymous"></script>
+</body>
+</html>
